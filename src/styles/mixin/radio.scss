@@ -1,0 +1,30 @@
+@mixin radio {
+  /deep/ .ivu-radio-wrapper {
+    font-size: $size-main;
+    margin-right: 0;
+    .ivu-radio {
+      margin-right: 0.42rem;
+
+      &.ivu-radio-checked {
+        .ivu-radio-inner {
+          border-color: $blue-1;
+        }
+      }
+
+      .ivu-radio-inner {
+        width: 0.83rem;
+        height: 0.83rem;
+        border-width: 0.07rem;
+
+        &::after {
+          width: 0.42rem;
+          height: 0.42rem;
+          left: 0.14rem;
+          top: 0.14rem;
+          border-radius: 0.42rem;
+          background-color: $blue-1;
+        }
+      }
+    }
+  }
+}
