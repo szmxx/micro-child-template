@@ -11,9 +11,9 @@ function resolve(dir) {
 const port = 8081; // dev port
 
 module.exports = {
-  publicPath: "/GHSS",
+  publicPath: "/",
 
-  outputDir: "GHSS",
+  outputDir: "dist",
   assetsDir: "static",
   filenameHashing: true,
   devServer: {

@@ -1,3 +1,9 @@
+/*
+ * @Author: cola
+ * @Date: 2023-01-09 14:46:34
+ * @LastEditors: cola
+ * @Description:
+ */
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
@@ -6,7 +12,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/GHSS",
+    path: "/",
     name: "Home",
     component: Home,
     redirect: {
@@ -17,8 +23,7 @@ const routes = [
         path: "content",
         name: "content",
         meta: {
-          name: "KFQPTYDSC",
-          navTitle: "合规审查"
+          name: "KFQPTYDSC"
         },
         component: () =>
           import(/* webpackChunkName: "container" */ "../views/container.vue"),
@@ -28,8 +33,11 @@ const routes = [
   }
 ];
 
-const router = new VueRouter({
-  routes
-});
+const createRouter = (base = "") =>
+  new VueRouter({
+    base: base,
+    routes,
+    mode: "history"
+  });
 
-export default router;
+export default createRouter;
